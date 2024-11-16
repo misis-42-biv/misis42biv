@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "biv-hack"
+version = "0.1.0"
+description = ""
+authors = ["Афанасьев Максим Александрович <afanasev@tochka.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+xztrainer = "^1.2.1"
+torch = "^2.5.1"
+transformers = "^4.46.2"
+vllm = "^0.6.4.post1"
+peft = "^0.13.2"
+pydantic = "^2.9.2"
+torchmetrics = "^1.6.0"
+bitsandbytes = "^0.44.1"
+tensorboard = "^2.18.0"
+pyarrow = "^18.0.0"
+scikit-learn = "^1.5.2"
+click = "^8.1.7"
+onnx = "^1.17.0"
+onnxruntime = "^1.20.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
