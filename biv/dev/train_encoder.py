@@ -14,7 +14,8 @@ from xztrainer import set_seeds, enable_tf32, XZTrainable, BaseContext, DataType
 from biv.dev.common_train import stack_pad
 from biv.dev.dto import Payment
 
-BASE_ENCODER_MODEL = 'Tochka-AI/ruRoPEBert-e5-base-2k'
+# BASE_ENCODER_MODEL = 'Tochka-AI/ruRoPEBert-e5-base-2k'
+BASE_ENCODER_MODEL = 'cointegrated/rubert-tiny2'
 
 CLASS_MAP = {
     'BANK_SERVICE': 0,
@@ -104,6 +105,7 @@ class EncoderTrainable(XZTrainable):
 
 
 def train():
+    set_seeds(0xFAFA)
     df_train, df_test = load_data()
     df_train = df_train[df_train['category'].isin(CLASS_MAP.keys())]
     ds_train = EncoderPayDataset(df_train)
@@ -114,7 +116,6 @@ def train():
         log_with='tensorboard',
         project_dir='.',
     )
-    set_seeds(0xFAFA)
     enable_tf32()
     model = EncoderModel()
 

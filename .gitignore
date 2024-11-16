@@ -2,3 +2,4 @@ logs/
 checkpoint/
 .idea/
 *.pyc
+export/data/output.tsv
